@@ -1,0 +1,283 @@
+:root {
+  --dark: #19283f;
+  --green: #33d1cc;
+  --red: #ff3150;
+  --yellow: #ffc400;
+  --section-color: #eff7fa;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-btn {
+  border: 2px solid var(--red);
+  color: var(--yellow);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-btn.active,
+.main-btn:hover {
+  background-color: var(--red);
+  color: var(--yellow);
+  box-shadow: var(--red) 0px 0px 8px;
+}
+
+.main-title::after {
+  content: "";
+  width: 300px;
+  height: 5px;
+  border-radius: 50px;
+  box-shadow: var(--green) 0 0 5px;
+  background-color: var(--green);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--dark);
+  box-shadow: #000 2px 0px 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--green);
+}
+
+.navbar .search {
+  color: var(--green);
+  font-size: 25px;
+  border-left: 1px solid var(--green);
+}
+
+@media (max-width: 992px) {
+  .navbar .search {
+    border-left: none;
+  }
+}
+
+.navbar .navbar-toggler {
+  color: white;
+  font-size: 25px;
+  border-color: white;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+  color: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 10px var(--green);
+}
+
+/* Landing */
+.landing {
+  height: calc(100vh - 70px);
+  background-color: var(--dark);
+}
+
+/* Features */
+.features .icon-holder {
+  height: 200px;
+}
+
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--section-color);
+}
+
+.features .icon-holder .icon {
+  color: var(--green);
+}
+
+.features .feat h3 {
+  color: var(--yellow);
+}
+
+/* Our Work */
+.our-work {
+  background-color: var(--section-color);
+}
+
+.our-work ul li {
+  cursor: pointer;
+}
+
+.our-work .box {
+  border: 5px solid white;
+  overflow: hidden;
+  position: relative;
+}
+
+.our-work .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgb(51, 209, 204, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+  transform: translateX(-100%);
+}
+
+.our-work .box:hover::before {
+  transform: translateX(0);
+}
+
+/* Team */
+.our-team {
+  background-color: var(--section-color);
+}
+
+.our-team h2 {
+  color: var(--yellow);
+}
+
+.our-team .box h3 {
+  background-color: var(--green);
+}
+
+/* Project */
+.project {
+  background-color: var(--dark);
+}
+
+/* Subscribe */
+.subscribe {
+  background-color: var(--yellow);
+}
+
+.subscribe input[type="text"] {
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 20px;
+}
+
+.subscribe input[type="text"]:focus {
+  color: white;
+  outline: none;
+}
+
+.subscribe ::placeholder {
+  color: white;
+}
+
+.subscribe input[type="submit"] {
+  background-color: var(--dark);
+  color: var(--yellow);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+}
+
+.footer .copyright > span {
+  color: var(--green);
+}
+
+.footer .copyright div span {
+  color: var(--yellow);
+}
+
+.footer .contact ul svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer .facebook {
+  background-color: #1877f2;
+}
+
+.footer .twitter {
+  background-color: #1da1f2;
+}
+
+.footer .linkedin {
+  background-color: #0077b5;
+}
+
+.footer .youtube {
+  background-color: #ff0000;
+}
+
+/* Magic Touch: Footer Links Hover */
+.footer-link {
+  transition: color 0.3s, text-shadow 0.3s;
+  color: #222;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+.footer-link:hover {
+  color: #33d1cc;
+  text-shadow: 0 0 8px #33d1cc, 0 0 2px #fff;
+}
+
+.footer-link.active,
+.footer-link:focus {
+  color: #33d1cc;
+  text-shadow: 0 0 8px #33d1cc, 0 0 2px #fff;
+  outline: none;
+}
+
+/* Magic Touch: Footer Social Icons Animation */
+.footer .contact ul li a .fa-brands {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer .contact ul li a:hover .fa-brands {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: 0 0 12px #33d1cc;
+}
+
+/* Magic Touch: Footer Email Button */
+.footer .contact .main-btn {
+  background: linear-gradient(90deg, #33d1cc 0%, #ff3150 100%);
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 12px #33d1cc44;
+  transition: background 0.3s, color 0.2s, box-shadow 0.2s;
+}
+
+.footer .contact .main-btn:hover {
+  background: linear-gradient(90deg, #ff3150 0%, #33d1cc 100%);
+  color: #ffc400;
+  box-shadow: 0 4px 24px #ff315088;
+}
+
+/* Magic Touch: Footer Copyright */
+.footer .copyright {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer .copyright::after {
+  content: " | Designed & coded by Abo Al Magd";
+  color: #33d1cc;
+  font-size: 0.95em;
+  margin-left: 8px;
+  font-style: italic;
+  opacity: 0.85;
+}
